@@ -28,10 +28,18 @@
             Categories
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <?php
+            $sql = "SELECT * FROM `categories`";
+            $result = mysqli_query($conn, $sql);
+
+            $num = mysqli_num_rows($result);
+            while($row = mysqli_fetch_assoc($result))
+            { 
+              $cat_id = $row['category_id'];
+              $title = $row['category_name'];
+          ?>
+              <li><a class="dropdown-item" href="#"><?php echo $title; ?></a></li>
+          <?php } ?>
           </ul>
         </li>
         <li class="nav-item">
