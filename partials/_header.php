@@ -38,7 +38,7 @@
               $cat_id = $row['category_id'];
               $title = $row['category_name'];
           ?>
-              <li><a class="dropdown-item" href="#"><?php echo $title; ?></a></li>
+              <li><a class="dropdown-item" href="/myForum/threads.php?cat_id=<?php echo $cat_id; ?>"><?php echo $title; ?></a></li>
           <?php } ?>
           </ul>
         </li>

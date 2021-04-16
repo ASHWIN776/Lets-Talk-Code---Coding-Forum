@@ -89,7 +89,7 @@
             <div class="card-body">
               <h5 class="card-title"><?php echo $title; ?></h5>
               <p class="card-text"><?php echo substr($desc, 0, 140) . '...'; ?></p>
-              <a href="#" class="btn btn-primary">Explore threads</a>
+              <a href="/myForum/threads.php?cat_id=<?php echo $cat_id; ?>" class="btn btn-primary">Explore threads</a>
             </div>
           </div>
         </div>
