@@ -67,49 +67,33 @@
   </button>
 </div>
 <!-- Slider ends here -->
+
+<!-- Category div starts here -->
 <div class="container" id="cat_div">
   <h1 class="text-center py-3">Browse Categories</h1>
   <div class="row">
-    <div class="col-md-4 my-3">
-      <div class="card m-auto" style="width: 18rem;">
-        <img src="images/card1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <?php
+      $sql = "SELECT * FROM `categories`";
+      $result = mysqli_query($conn, $sql);
+
+      $num = mysqli_num_rows($result);
+      while($row = mysqli_fetch_assoc($result))
+      { 
+        $cat_id = $row['category_id'];
+        $title = $row['category_name'];
+        $desc = $row['category_description'];
+      ?>
+        <div class="col-md-4 my-3">
+          <div class="card m-auto" style="width: 18rem;">
+            <img src="images/card<?php echo $cat_id; ?>.jpg" class="card-img-top" alt="Category pic">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $title; ?></h5>
+              <p class="card-text"><?php echo substr($desc, 0, 140) . '...'; ?></p>
+              <a href="#" class="btn btn-primary">Explore threads</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card m-auto" style="width: 18rem;">
-        <img src="images/card2.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card m-auto" style="width: 18rem;">
-        <img src="images/card3.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card m-auto" style="width: 18rem;">
-        <img src="images/card4.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+      <?php } ?>
   </div>
 </div>
 

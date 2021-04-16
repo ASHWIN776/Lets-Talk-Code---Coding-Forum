@@ -7,7 +7,6 @@
   {
     $logged_in = true;
   }
-
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -56,8 +55,8 @@
             <button type="button" class="btn btn-outline-success"><a href="/myForum/partials/_logout.php" style="text-decoration: none; color: white;">Logout</a></button>
           <?php } 
           else { ?>
-        <button type="button" class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-        <button type="button" class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</button>
+        <button type="button" class="btn btn-outline-success me-1" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+        <button type="button" class="btn btn-outline-success me-1" data-bs-toggle="modal" data-bs-target="#signupModal">Signup</button>
         <?php } ?>
       </div>
     </div>
